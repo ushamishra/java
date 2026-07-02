@@ -9,6 +9,15 @@ public class DomainUtility {
         System.out.println(user.name);
 
     }
+
+    public static float convertCelsiusToFarhenhite( float tempInCelsius) {
+
+        float farhenhite = (9/5)* tempInCelsius +32;
+
+        return farhenhite;
+    }
+
+
 }
 
 // class has attributes/properties and method
