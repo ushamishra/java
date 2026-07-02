@@ -6,7 +6,6 @@ public class DomainUtility {
 
         User user = new User();
         user.setValues("Mounika","UK","London",4445,"hghh@77");
-        System.out.println(user.name);
 
     }
 
