@@ -1,3 +1,6 @@
+import abc.ConnectionCreator;
+import abc.MyInterface;
+import inheritence.Car;
 import socialnetwork.User;
 import socialnetwork.DomainUtility;
 import socialnetwork.blog.Blog;
@@ -19,6 +22,34 @@ public class Main extends User {
         System.out.println(farhenhiteTemp);
         float changedTemp = DomainUtility.convertCelsiusToFarhenhite(45);
         System.out.println(changedTemp);
+
+        String s1 = MyInterface.str;
+
+        int i = 20;
+        i += 20 ;
+
+        i -= 20;
+
+        i = i *20;
+        i *= 20;
+
+        i = i/20;
+        i /=20;
+
+
+
+        // i = i+20
+        System.out.println(i--);
+        System.out.println(i);
+
+        Car car = new Car();
+
+
+
+
+
+
+
 
     }
 }

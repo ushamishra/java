@@ -6,6 +6,10 @@ public class BankAccount {
     private double balance;
     private String accountType;
 
+    private final double MIN_BALANCE= 1000.00;
+
+
+
     //no parameter constructor
     public BankAccount(){
 
@@ -58,6 +62,7 @@ public class BankAccount {
         String dbusername = "mounika";
         String dbpwd = "somepwd123";
         this.balance = 34000;
+
 
         double withdrawalAmt = 0;
 
