@@ -1,0 +1,65 @@
+Class and object
+
+java HelloWorld 
+
+Variables - static variable  - class Name  A.myvar obj.myvar
+            instance variable  obj.myvar
+            local variable
+
+
+Method ----- 1. Instance method obj.myInstanceMethod()
+             2. static method   A.myStaticMethod() , obj.myStaticMethod()
+
+
+Visiblity/Acessiblity :  public (Highest)- class, method ,variable - access it anywhere (inside the class, inside the package, outside the package)
+
+protected - class, method ,variable - it  can be accessible inside the class as well as inside the same package,also in the sub class of the other package
+
+Default - class, method ,variable - default can be accessible inside the class as well as in the same package
+
+private - class, method ,variable - it  can be accessible inside the class
+
+Primitive datatype:
+byte,short,int.long,float,double,boolean and char
+
+Userdefined data type:
+
+String , Class type
+
+oops concept
+class object
+encapsulation - data is secure , your variable which holds data - private
+Inheritence - 
+Overriding
+Overloading
+Interface - An interface in java , it is reference type that act as a blueprint or behavior contract for classes.It simply says that what a class must do 
+
+1. for loose coupling
+2. It just define a behavior, the implementation of the behavior is the responsibility of the subclass
+3. It is a contact between sub class and superclass
+
+Abstract class
+final keyword
+
+=====================================
+ int a = 10
+
+a < 11 && a > 9
+
+a < 11 || a > 9
+
+!true
+=========
+
+
+
+
+
+
+
+
+
+
+
+
+
