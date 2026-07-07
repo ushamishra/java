@@ -1,55 +1,41 @@
 import abc.ConnectionCreator;
 import abc.MyInterface;
 import inheritence.Car;
+import nestedpackage.A;
 import socialnetwork.User;
 import socialnetwork.DomainUtility;
 import socialnetwork.blog.Blog;
-public class Main extends User {
+
+import java.util.*;
+
+public class Main  {
     public static void main(String[] args) {
-        User user1 = new User("usha","india","Bhubaneswar",8778,"heopp@77");
-       
 
-        User user2 = new User("Mounika","UK","London",4445,"hghh@77");
+        String[] strList = {"hello","hi","hello","welcome","hello","hi","hi","welcome", "city"};
+        Map<String,Integer> freqMap = new HashMap<String, Integer>();
 
+        for(int i =0; i <  strList.length;i++){
+            String key = strList[i];
 
-
-        System.out.println("User1 name: " + user1.getName());
-
-        System.out.println("User2 name : " + user2.getName() + "User2 counry : "+user2.getName());
-
-        DomainUtility domainUtility = new DomainUtility();
-        float farhenhiteTemp = domainUtility.convertCelsiusToFarhenhite(23);
-        System.out.println(farhenhiteTemp);
-        float changedTemp = DomainUtility.convertCelsiusToFarhenhite(45);
-        System.out.println(changedTemp);
-
-        String s1 = MyInterface.str;
-
-        int i = 20;
-        i += 20 ;
-
-        i -= 20;
-
-        i = i *20;
-        i *= 20;
-
-        i = i/20;
-        i /=20;
+            if (freqMap.get(key) == null) {
+                freqMap.put(key, 1);
+            }
+            else {
+                Integer val = freqMap.get(key);
+                freqMap.put(key,val+1);
+            }
 
 
+            }
 
-        // i = i+20
-        System.out.println(i--);
-        System.out.println(i);
-
-        Car car = new Car();
+        System.out.println(freqMap);
 
 
+        nestedpackage.A objA = new nestedpackage.A ();
+        nestedpackage.A.B objB = objA.new B();
 
-
-
-
-
+        objB.m1();
 
     }
+
 }
