@@ -16,6 +16,7 @@ public class CheckedExceptionDemo {
         String dbUser = "root";
         String password = "root";
         List<User> userList = new ArrayList<User>();
+
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
