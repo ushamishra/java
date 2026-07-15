@@ -28,14 +28,16 @@ interface I2 {
 }
 
 
-class B1  extends NiceClass3 implements Runnable,Cloneable,I1,I2{
+class B1  extends NiceClass3 implements Runnable{
 
 
     @Override
     public void run() {
+
         System.out.println("read data from a file and write it  file f1");
     }
 }
+
 //approach 1
 class B2 extends Thread{
 
@@ -58,7 +60,7 @@ public class MutltiThreadindDemo1 {
     public static void main(String[] args) {
 
 
-        Thread b1 = new B1(); // new thread
+        Thread b1 = new Thread(new B1()); // new thread
 
         Thread b2 = new B2();
 
