@@ -1,14 +1,13 @@
 package concurrencydemo;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.locks.ReentrantLock;
 
 class CounterThread extends Thread {
 
     AtomicInteger counter;
-    ReentrantLock lock ;
-    CounterThread(AtomicInteger counter, ReentrantLock lock){
+
+    CounterThread(AtomicInteger counter){
         this.counter = counter;
-        this.lock = lock;
+
     }
     @Override
     public void run() {
@@ -19,23 +18,22 @@ class CounterThread extends Thread {
 
 
         System.out.println(Thread.currentThread().getName() +" trying to increment");
-        lock.lock();
+
 
         counter.incrementAndGet();
 
-        lock.unlock();
         System.out.println(Thread.currentThread().getName() +" incremneted to "+counter);
     }
 }
-public class LockDemo {
+public class AtomicIntegerDemo {
 
     public static void main(String[] args) {
 
-        ReentrantLock lock = new ReentrantLock();
+//        ReentrantLock lock = new ReentrantLock();
         AtomicInteger counter = new AtomicInteger(20);
 
-        CounterThread t1 = new CounterThread(counter,lock);
-        CounterThread t2 = new CounterThread(counter,lock);
+        CounterThread t1 = new CounterThread(counter);
+        CounterThread t2 = new CounterThread(counter);
 
         t1.start();
         t2.start();
