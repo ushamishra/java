@@ -14,6 +14,8 @@ public class VolatileExample {
                 System.out.println("Worker thread started...");
 
                 while (sayHello) {
+
+                    System.out.println(count);
                     count++; // Keep busy without doing blocking I/O
                 }
 

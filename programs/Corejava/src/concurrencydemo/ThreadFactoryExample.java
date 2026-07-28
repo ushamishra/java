@@ -21,6 +21,8 @@ public class ThreadFactoryExample {
         };
 
         // Use the custom ThreadFactory with an ExecutorService
+
+
         ExecutorService threadPool = Executors.newFixedThreadPool(2, customFactory);
 
         // Submit tasks

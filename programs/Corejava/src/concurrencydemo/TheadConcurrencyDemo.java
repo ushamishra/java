@@ -19,19 +19,21 @@ class BankUser {
     }
 }
 
-class DatabaseTask implements Callable<Integer> {
+class DatabaseTask implements Callable<Double> {
 
     BankUser user ;
     DatabaseTask(BankUser user){
+
         this.user = user;
     }
     @Override
-    public Integer call() throws Exception {
+    public Double call() throws Exception {
 
+        System.out.println("Balance is retrived for user accounid = "+user.accountid +" pwd = "+ this.user.pwd + " by thread  = " + Thread.currentThread().getName());
         //Calling the database and fetching the user details user.accountid
-      Integer balance = 40000;
+        Double balance = Math.random()*10000;
 
-      return balance;
+          return balance;
 
     }
 }
@@ -46,7 +48,7 @@ public class TheadConcurrencyDemo {
         //case 1 : 30 threads reached to the server
 
         Stack<BankUser> userList = new Stack<>();
-         for(int i = 1; i<= 30; i++){
+         for(int i = 1; i<= 100; i++){
 
              Integer accountId = (int)Math.random()*100000;
              String pwd = "abc"+i;
@@ -58,11 +60,19 @@ public class TheadConcurrencyDemo {
 
         ExecutorService threadPool = Executors.newFixedThreadPool(20);
 
+         List<Future> futures = new ArrayList<Future>();
         //submit the request to callable task
-        Future<Integer> future = threadPool.submit(new DatabaseTask(userList.pop()));
+        for (BankUser user : userList) {
+
+            Future ft = threadPool.submit(new DatabaseTask(user));
+            futures.add(ft);
+        }
 
         try {
-            System.out.println(future.get());
+
+            for (Future ft : futures) {
+                System.out.println(ft.get());
+            }
 
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
