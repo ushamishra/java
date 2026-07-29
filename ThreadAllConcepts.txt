@@ -1,0 +1,176 @@
+ThreadCreation
+Approach 1
+
+class A extends Thread {
+
+run(){
+
+}
+
+}
+
+A t1 = new A();
+
+t1.start()
+
+Approach 2
+
+
+class A implements Runnable {
+
+run(){
+
+}
+
+}
+
+Thread t1 = new Thread(new A())
+t1.start();
+
+
+
+Approach 3
+
+
+Thread t1 = new Thread(new Runnable() {
+     void run(){}
+}
+
+t1.start()
+
+
+
+
+
+Approach 5
+
+import java.util.concurrent.Executors;
+
+  ExecutorService threadPool = Executors.newFixedThreadPool(20, customFactory);
+
+Future ft = threadPool.submit(new Callable()<Integer> {
+
+Integer call(){
+
+return new Integer(20);
+}
+
+})
+
+ft.get()
+
+----------------------------------------------------------------------------------------------------
+
+Thread Synchronization
+
+T1 T2  - Integer count = 12
+
+run(){
+synchronized(count) {
+
+count++
+}
+
+}
+
+synchronized void IncrementCount(){
+
+{
+count++
+
+}
+===================================================================================================
+
+Deadlock
+
+T1
+synchroned(ob1)  {
+
+
+ob2
+}
+
+T2
+synchroned(ob2)  {
+
+
+ob1
+}
+=================================================================================
+
+static locking and object locking
+
+class A{
+
+synchronied  m1(){}
+
+synchronied  m2(){}
+
+}
+
+A obj = new A()
+A obj1 = new A()
+
+T1 - obj run {obj.m1()}
+
+
+T2 -> obj run {obj.m2()}
+=====================================
+
+Racing
+==========
+
+AtomicInteger
+
+AtomicArray
+
+
+Volatile
+
+ReentrantLock
+
+ReentrantReadWriteLock
+
+T1 T2  T3, T4  - T3 counter++
+
+T1,T2,T4
+
+
+writeCounter(){
+
+counter++
+}
+
+readCounter(){
+
+return count;
+}
+
+
+
+Count
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   }
+
