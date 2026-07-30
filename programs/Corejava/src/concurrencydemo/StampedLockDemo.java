@@ -26,6 +26,8 @@ class SharedDataBetweenThreads {
         long stamp = lock.tryOptimisticRead(); // non-blocking read  //10.21
         int current = value;
 
+
+
         // validate if a write happened during read
         if (!lock.validate(stamp)) {
             // fall back to full read lock
