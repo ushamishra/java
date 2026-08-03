@@ -20,7 +20,7 @@ public class HashSetDemo {
 //        }
 
 
-        System.out.println(strSet.size());
+
 
 
 
@@ -30,6 +30,18 @@ public class HashSetDemo {
             System.out.println(itr.next());
         }
 
+
+        Set<String> treeSet = new TreeSet<>();
+        treeSet.add("Apple");
+        treeSet.add("Orange");
+        treeSet.add("Banana");
+        treeSet.add("Mango");
+        treeSet.add("Apple");
+        treeSet.add("Watermelon");
+        treeSet.add("Apple");
+
+
+        System.out.println(treeSet);
 
     }
 }

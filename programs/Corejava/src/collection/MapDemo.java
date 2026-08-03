@@ -8,11 +8,11 @@ public class MapDemo {
     public static void main(String[] args) {
 
 
-        Student st1 = new Student(1,"Mounika", "5th",'C');
-        Student st2 = new Student(2,"Usha", "5th",'B');
-        Student st3 = new Student(3,"Ram", "6th",'D');
-        Student st4 = new Student(4,"Hari", "10th",'A');
-        Student st5 = new Student(5,"Ajay", "10th",'A');
+        Student st1 = new Student(1,"Mounika", "5th",'C',97.67);
+        Student st2 = new Student(2,"Usha", "5th",'B',90.56);
+        Student st3 = new Student(3,"Ram", "6th",'D',67.23);
+        Student st4 = new Student(4,"Hari", "10th",'A',99.56);
+        Student st5 = new Student(5,"Ajay", "10th",'A',89.23);
 
 
         Map<Integer,Student> studentMap = new HashMap<>();

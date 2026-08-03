@@ -2,6 +2,7 @@ package collection;
 
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class ListDemo {
@@ -28,6 +29,9 @@ public class ListDemo {
         float[] fls = {2.9f,8.6f};
 
 
+        List<Integer> integrLinkedList = new LinkedList<>();
+
+
         List<Integer> integrList = new ArrayList<>();
         List<String> strList = new ArrayList<>();
         strList.add("Apple");
@@ -37,6 +41,8 @@ public class ListDemo {
         strList.add("Apple");
         strList.add("Watermelon");
         strList.add("Apple");
+
+        strList.add(5,"Pineapple");
 
         for(String str :strList){
 
