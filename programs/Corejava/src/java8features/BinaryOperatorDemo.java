@@ -11,14 +11,8 @@ public class BinaryOperatorDemo {
         BinaryOperator<Integer> returnMin = (a,b )->   a+b;
         System.out.println(returnMin.apply(2,3));
 
-        UnaryOperator<Integer> un = a  -> a*a;
 
-        System.out.println(returnMin.andThen(un).apply(2,3));
 
-        BinaryOperator<Integer>
-                op = BinaryOperator
-                .minBy(
-                        (a, b) -> (a > b) ? 1 : ((a == b) ? 0 : -1));
 
 
     }

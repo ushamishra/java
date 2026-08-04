@@ -9,6 +9,6 @@ public class FunctionDemo {
 
         Function<Integer,Integer> square = a -> a*a;
 
-        square.apply(20);
+        System.out.println(square.apply(20));
     }
 }
