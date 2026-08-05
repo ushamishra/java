@@ -2,6 +2,7 @@ package collection;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class MapDemo {
 
@@ -23,6 +24,11 @@ public class MapDemo {
         studentMap.put(st3.getRollNo(),st3);
         studentMap.put(st4.getRollNo(),st4);
         studentMap.put(null,st5);
+
+
+        studentMap.entrySet().stream().filter(entry  ->
+                entry.getValue().getStandard().equalsIgnoreCase("5th") &&
+                entry.getValue().getSection() == 'c').collect(Collectors.toList())''
 
         Student st = studentMap.get(2);
 
